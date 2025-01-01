@@ -278,7 +278,7 @@ Overlay files shall be placed in the `overlay.d` folder in boot image ramdisk, a
 2. Existing files can be replaced by files located at the same relative path
 3. Files that correspond to a non-existing file will be ignored
 
-To add additional files which you can refer to in your custom `*.rc` scripts, add them into `overlay.d/sbin`. The 3 rules above do not apply to anything in this folder; instead, they will be directly copied to Magisk's internal `tmpfs` directory (which used to always be `/sbin`).
+To add additional files which you can refer to in your custom `*.rc` scripts, add them into `overlay.d/spzbin`. The 3 rules above do not apply to anything in this folder; instead, they will be directly copied to Magisk's internal `tmpfs` directory (which used to always be `/sbin`).
 
 Starting from Android 11, the `/sbin` folder may no longer exists, and in that scenario, Magisk uses `/debug_ramdisk` instead. Every occurrence of the pattern `${MAGISKTMP}` in your `*.rc` scripts will be replaced with the Magisk `tmpfs` folder when `magiskinit` injects it into `init.rc`. On pre Android 11 devices, `${MAGISKTMP}` will simply be replaced with `/sbin`, so **NEVER** hardcode `/sbin` in the `*.rc` scripts when referencing these additional files.
 
